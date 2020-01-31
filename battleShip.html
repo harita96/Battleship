@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<h1>PLAY BATTLESHIP!</h1>
+		<script>
+			var ship1 = 3,ship2 = 6, ship3 = 1;
+			var guess, guesses = 0, isSunk = false, hits = 0;
+			while(isSunk == false){
+				//if(hits < 3){
+					guess = prompt("Ready,aim,fire!(enter a number from 0-6):");
+					
+					if(guess>0 && guess<7){
+						
+						guesses = guesses + 1;
+						if(guess == ship1 || guess == ship2 || guess == ship3){
+							hits = hits + 1;
+							alert("HIT");
+							if(hits == 3){
+								isSunk = true;
+								alert("You sank my battleship!");
+								alert("You took " + guesses + " guesses to sink the battleship, which means your shooting accuracy was " + (3/guesses));
+							}
+						}
+						else{
+							alert("MISS");
+						}
+						
+						
+					}
+					else{
+						alert("Please enter a valid cell number!");
+					}
+				//}
+				/*else{
+					alert("woaahhh!! You sank my battleship!");
+					break;
+				}*/
+			}
+		</script>
+	</body>
+</html>
